@@ -102,18 +102,6 @@ public class TicketServlet extends HttpServlet {
         request.setAttribute("ticketID", idString);
         request.getRequestDispatcher("WEB-INF/jsp/view/viewTicket.jsp").forward(request,response);
 
-/*
-        PrintWriter out = response.getWriter();
-        out.println("<html><body><h2>Ticket Information: </h2>");
-        out.println("<h3> Thank you, " + ticket.getCustomerName()+" for submitting a ticket.</h3>");
-        out.println("<p> Subject: " + ticket.getSubject()+"</p>");
-        out.println("<p> Issue: " + ticket.getBody()+"</p>");
-        if(ticket.hasAttachment()){
-            out.println("<a href=\"ticket?action=download&ticketID=" + idString + "&attachment=" + ticket.getAttachment().getName() + "\">" + ticket.getAttachment().getName() + "</a><br><br>");
-        }
-        out.println("<a href=\"ticket\"> Return to ticket list</a>");
-        out.println("</body></html>");
-        */
     }
 
 
