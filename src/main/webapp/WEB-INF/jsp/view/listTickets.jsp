@@ -2,6 +2,9 @@
 <head>
     <title>Ticket List</title>
 </head>
+    <a href="<c:url value='/login'>
+        <c:param name='logout'/>
+    </c:url>">Logout</a>
 <body>
     <h2>Ticket List</h2>
     <a href="<c:url value='/ticket'>

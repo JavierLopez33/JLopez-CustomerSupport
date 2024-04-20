@@ -18,7 +18,11 @@ public class TicketServlet extends HttpServlet {
 
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-        response.setContentType("text/html");
+        // check for login
+        if(request.getSession().getAttribute("username") == null){
+            response.sendRedirect("login");
+            return;
+        }
 
         String action = request.getParameter("action");
 
@@ -45,6 +49,12 @@ public class TicketServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        if(request.getSession().getAttribute("username") == null){
+            response.sendRedirect("login");
+            return;
+        }
+
         String action = request.getParameter("action");
 
         if (action == null) {
