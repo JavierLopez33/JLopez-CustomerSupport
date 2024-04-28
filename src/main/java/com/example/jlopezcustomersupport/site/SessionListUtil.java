@@ -1,4 +1,4 @@
-package com.example.jlopezcustomersupport;
+package com.example.jlopezcustomersupport.site;
 
 
 import java.util.*;

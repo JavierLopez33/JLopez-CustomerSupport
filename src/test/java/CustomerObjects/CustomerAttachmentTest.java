@@ -1,4 +1,5 @@
 package CustomerObjects;
+import com.example.jlopezcustomersupport.site.Attachment;
 import org.junit.jupiter.api.Test;
 
 public class CustomerAttachmentTest {

@@ -1,4 +1,4 @@
-package com.example.jlopezcustomersupport;
+package com.example.jlopezcustomersupport.site;
 
 import jakarta.servlet.annotation.WebListener;
 import jakarta.servlet.http.HttpSessionEvent;

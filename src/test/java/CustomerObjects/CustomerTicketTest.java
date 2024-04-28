@@ -1,5 +1,7 @@
 package CustomerObjects;
 
+import com.example.jlopezcustomersupport.site.Attachment;
+import com.example.jlopezcustomersupport.site.Ticket;
 import org.junit.jupiter.api.Test;
 
 public class CustomerTicketTest {

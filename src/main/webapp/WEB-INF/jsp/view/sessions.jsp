@@ -1,13 +1,9 @@
-<c:set var="now" value="<%=System.currentTimeMillis()%>"/>
-
 <html>
 <head>
     <title>Ticket Sessions Admin View</title>
 </head>
 <body>
-  <a href="<c:url value='login'>
-  <c:param name="logout"/>
-  </c:url>"> Logout </a>
+<a href="<c:url value='/logout'/>">Logout</a>
 <h2>Sessions Information</h2>
 <p>There are a total of <c:out value="${numSessions}"/> active sessions going on.</p>
 <ul>
