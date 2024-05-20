@@ -16,7 +16,7 @@ public class DefaultTicketService implements TicketService{
     @Inject AttachmentRepository attachmentRepo;
 
     @Override
-    @Transactional
+    //@Transactional
     public List<Ticket> getAllTickets() {
         List<Ticket> list = new ArrayList<>();
         ticketRepo.getAll().forEach(e -> list.add(this.convert(e)));

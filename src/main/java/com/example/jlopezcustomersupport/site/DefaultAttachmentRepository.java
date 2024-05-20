@@ -5,12 +5,15 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class DefaultAttachmentRepository extends GenericJpaRepository<Long, Attachment> implements AttachmentRepository{
+
     @Override
-    public Attachment getByTicketId(Long ticketId) {
+    public Attachment getByTicketId(Long ticketID) {
         try {
-            return this.entityManager.createQuery("SELECT i FROM Attachment WHERE i.ticketID = :id", Attachment.class).setParameter("id", ticketId).getSingleResult();
-        } catch (Exception e) {
+            return this.entityManager.createQuery("SELECT i FROM Attachment i WHERE i.ticketId = :id", Attachment.class).setParameter("id", ticketID).getSingleResult();
+        }
+        catch(Exception e) {
             return null;
         }
     }
 }
+
