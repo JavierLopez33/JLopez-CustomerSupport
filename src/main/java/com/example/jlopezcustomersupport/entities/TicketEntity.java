@@ -1,22 +1,22 @@
-package com.example.jlopezcustomersupport.site;
+package com.example.jlopezcustomersupport.entities;
 
-import com.example.jlopezcustomersupport.entities.Attachment;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
-public class Ticket implements Serializable {
+@Entity
+@Table(name="tickets")
+public class TicketEntity implements Serializable {
 
-    private long id;
+    private static final long serialVersionUID = 1L; // unique id for serializable version
+    private  long id; // primary key
     private String customerName;
     private String subject;
     private String body;
-    private Attachment attachment;
 
-
-    public Ticket() {
-        super();
-    }
-
+    @Id
+    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
         return id;
     }
@@ -25,6 +25,7 @@ public class Ticket implements Serializable {
         this.id = id;
     }
 
+    @Basic
     public String getCustomerName() {
         return customerName;
     }
@@ -33,6 +34,7 @@ public class Ticket implements Serializable {
         this.customerName = customerName;
     }
 
+    @Basic
     public String getSubject() {
         return subject;
     }
@@ -41,23 +43,12 @@ public class Ticket implements Serializable {
         this.subject = subject;
     }
 
+    @Basic
     public String getBody() {
         return body;
     }
 
     public void setBody(String body) {
         this.body = body;
-    }
-
-    public Attachment getAttachment() {
-        return attachment;
-    }
-
-    public void setAttachment(Attachment attachment) {
-        this.attachment = attachment;
-    }
-
-    public boolean hasAttachment() {
-        return attachment != null && attachment.getName().length() > 0 && attachment.getContents().length>0;
     }
 }

@@ -12,9 +12,9 @@
         </c:when>
         <c:otherwise>
             <c:forEach var="ticket" items="${ticketDatabase}">
-                Ticket#: <c:out value="${ticket.key} - "></c:out>
-                <a href="<c:url value='/ticket/view/${ticket.key}'/>">
-                    <c:out value="${ticket.value.subject}"></c:out></a><br>
+                Ticket#: <c:out value="${ticket.id} - "></c:out>
+                <a href="<c:url value='/ticket/view/${ticket.id}'/>">
+                    <c:out value="${ticket.subject}"></c:out></a><br>
             </c:forEach>
         </c:otherwise>
     </c:choose>
